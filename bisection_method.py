@@ -33,7 +33,7 @@ class BisectionSolver:
     if f_lb * f_ub < 0 :
       mid_point = ( lower_bound + upper_bound ) / 2
       f_mid = function( mid_point )
-      while np.abs( ( upper_bound - lower_bound ) )> self.rel_tol or np.abs( f_mid ) > self.abs_tol :
+      while np.abs( ( upper_bound - lower_bound ) )> self.rel_tol and np.abs( f_mid ) > self.abs_tol :
         if f_mid * f_ub > 0 :
           upper_bound = mid_point
           f_ub = f_mid
